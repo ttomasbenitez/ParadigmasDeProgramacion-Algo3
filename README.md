@@ -1,1 +1,3 @@
-# ParadigmasDeProgramaci-n-Algo3
+# ParadigmasDeProgramacion-Algo3
+
+Material hecho.
