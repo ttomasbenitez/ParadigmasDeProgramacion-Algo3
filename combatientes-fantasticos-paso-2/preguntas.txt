@@ -1,0 +1,18 @@
+¿Qué crítica le harías al protocolo de #estaHerido y #noEstaHerido? (en vez de tener solo el mensaje #estaHerido y hacer “#estaHerido not” para saber la negación).
+
+El protocolo de #estaHerido y #noEstaHerido repite código.
+Además, es más propenso a bugs, ya que hay que asegurarse que ambas implementaciones sean consistentes en lugar de implementarlo una solo vez y hacer not de la misma.
+
+---------------------------------------------------------------------------------------------------
+
+¿Qué opinan de que para algunas funcionalidades tenemos 3 tests para el mismo comportamiento pero aplicando a cada uno de los combatientes (Arthas, Mankrik y Olgra).
+
+Cada objeto debería tener su propio set de tests que verifiquen su comportamiento.
+Lo cuestionable es que Arthas, Mankrik y Olgra sean objetos diferentes, pero con comportamientos casi idénticos, no que cada objeto tenga sus test por mas que sean iguales.
+
+---------------------------------------------------------------------------------------------------
+
+¿Cómo modelaron el resultado de haber desarrollado un combate? ¿qué opciones consideraron y por qué se quedaron con la que entregaron y por qué descartaron a las otras?
+
+Inicialmente creamos el objeto "Resultado" pero lo descartamos porque no tenía comportamiento, eran solo getters y setters.
+Finalmente nos quedamos con dejar esas responsabilidades como parte del "OrquestadorDeCombate" porque era el que tenía la información para calcular lo pedido.

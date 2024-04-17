@@ -1,0 +1,24 @@
+1.
+
+En el Double Dispatch participan 2 mensajes polimórficos por cada subclase involucrada.
+Cada mensaje polimórfico aporta información sobre la clase del objeto que recibe el mensaje, y de esta manera, como sabe responderlo.
+
+2.
+
+La lógica para instanciar un objeto es mejor implementarla con un mensaje de clase, porque tiene más sentido crear un objeto si es que se cumple la lógica necesaria, y no inicializarlo y después verificar si sigue la lógica. Y de esta forma no instanciar un objeto basura que no sea útil.
+Si se crean de diferentes formas deberían existir subclases por cada forma que lo resuelvan. 
+
+3.
+
+Para categorizar métodos, si no deben ser utilizados por el usuario se clasifican como "privados". Y el resto se agrupan haciendo referencia a lo que hacen. 
+Para categorizar un mensaje como "privado", vemos si es una lógica particular del objeto y no es necesaria para que otro objeto interactúe con él, por ejemplo el Double Dispatch.
+
+4.
+
+Agregamos el mensaje “self subclassResponsibility”, para indicar a otro programador sobre como funciona el objeto. Por ejemplo, al crear un nuevo objeto hijo, saber que mensajes deberá saber responder.
+Sirve para señalizar lo anterior al programador.
+Si no lo hacemos, puede darse el caso de que el mensaje no esté implementado en su subclase, y por esto la clase no sepa responderlo y haya un error. Y, en el caso que si esté definido el método en todas sus subclases, si no se escribe el mensaje no habría problema, pero no sería una buena práctica por lo ya explicado.
+
+5.
+
+Romper Encapsulamiento lleva a un alto acoplamiento en el código. Esto hace más dificil mantener el código, ya que un cambio interno en un objeto podría representar un cambio en el funcionamiento general del programa.
